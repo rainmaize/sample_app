@@ -30,8 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 
-
-
 en:
   static_pages:
     home:
