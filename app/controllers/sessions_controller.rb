@@ -21,6 +21,6 @@ class SessionsController < ApplicationController
     log_in user
     return remember(user) if params[:session][:remember_me] == Settings.checked
     forget(user)
-    redirect_to user
+    redirect_back_or user
   end
 end
