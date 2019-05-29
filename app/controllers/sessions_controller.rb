@@ -18,9 +18,16 @@ class SessionsController < ApplicationController
 
   private
   def login_redirect user
-    log_in user
-    return remember(user) if params[:session][:remember_me] == Settings.checked
-    forget(user)
-    redirect_back_or user
+    if user.activated?
+      log_in user
+      if params[:session][:remember_me] == Settings.checked
+        return remember(user)
+      end
+      forget(user)
+      redirect_back_or user
+    else
+      flash[:danger] = t("account_inactivated")
+      redirect_to root_url
+    end
   end
 end

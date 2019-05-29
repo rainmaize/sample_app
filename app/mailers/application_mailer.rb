@@ -2,6 +2,6 @@
 
 # :nodoc:
 class ApplicationMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "baongo110397@gmail.com"
   layout "mailer"
 end

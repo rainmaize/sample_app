@@ -1,6 +1,23 @@
 # frozen_string_literal: true
 
 Rails.application.configure do
+
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.perform_caching = false
+
+  config.action_mailer.delivery_method = :smtp
+  host = "localhost:3000"
+  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.smtp_settings = {
+    address: Settings.address,
+    port: Settings.port,
+    domain: Settings.domain,
+    user_name: ENV["GMAIL_USERNAME"] ,
+    password: ENV["GMAIL_PASSWORD"],
+    authentication: Settings.authentication,
+    enable_starttls_auto: Settings.enable_auto
+  }
   config.cache_classes = true
 
   config.eager_load = true
