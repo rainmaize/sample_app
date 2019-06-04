@@ -1,17 +1,18 @@
+
 name_length: 50
 email_length: 250
 password_min_length: 6
 avatar_size: 80
 avatar_small: 50
+avatar_XS: 30
 checked: "1"
-per_page: 10
-default_from_email: "abc@example.com"
+default_from_email: "noreply@example.com"
 address: "smtp.gmail.com"
 port: 587
 domain: "gmail.com"
 authentication: "plain"
 enable_auto: true
-content_length: 140
 password_expire_time: 2
+content_length: 140
+index_per_page: 20
 max_upload_size: 5
-size_limit : 400
